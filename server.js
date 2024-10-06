@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const DB_PATH = path.join(__dirname, 'database.db'); // Використовуйте файл бази даних для збереження даних
 
 // Якщо потрібно очистити базу даних при кожному запуску сервера, раскоментуйте цей код
-// if (fs.existsSync(DB_PATH)) { fs.unlinkSync(DB_PATH); }
+if (fs.existsSync(DB_PATH)) { fs.unlinkSync(DB_PATH); }
 
 // Ініціалізація бази даних SQLite
 const db = new sqlite3.Database(DB_PATH, (err) => {
